@@ -1,0 +1,41 @@
+.section {
+  padding: 1.5rem 0 2rem;
+}
+
+.title {
+  margin: 0 0 1.25rem;
+  font-size: 1.5rem;
+  color: var(--text);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.card {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+.groupTitle {
+  margin: 0 0 0.85rem;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 48em) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

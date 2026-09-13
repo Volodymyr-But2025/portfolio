@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-label="Mebleriya poster">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8b5e3c"/>
+      <stop offset="100%" stop-color="#c4a484"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" fill="url(#bg)"/>
+  <rect x="80" y="90" width="800" height="360" rx="24" fill="#ffffff" opacity="0.92"/>
+  <text x="120" y="180" font-family="Segoe UI, Arial, sans-serif" font-size="44" font-weight="700" fill="#1a1b1e">51;5@VO</text>
+  <text x="120" y="240" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#495057">HTML5 · CSS3 · BEM · JavaScript · Vite</text>
+  <rect x="120" y="300" width="280" height="18" rx="9" fill="#d4a574"/>
+  <rect x="120" y="340" width="420" height="18" rx="9" fill="#e6c9a8"/>
+  <rect x="120" y="380" width="360" height="18" rx="9" fill="#f3e6d8"/>
+</svg>
