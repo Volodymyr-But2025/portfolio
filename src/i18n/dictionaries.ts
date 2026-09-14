@@ -39,6 +39,10 @@ export type Dictionary = {
     openModal: string;
     modalTitle: string;
     iframeTitle: string;
+    deviceGroup: string;
+    deviceMobile: string;
+    deviceTablet: string;
+    deviceDesktop: string;
   };
 };
 
@@ -84,6 +88,10 @@ const uk: Dictionary = {
     openModal: "Збільшити прев’ю",
     modalTitle: "Прев’ю проєкту",
     iframeTitle: "Інтерактивне прев’ю проєкту",
+    deviceGroup: "Перегляд на пристрої",
+    deviceMobile: "Телефон",
+    deviceTablet: "Планшет",
+    deviceDesktop: "ПК",
   },
 };
 
@@ -129,6 +137,10 @@ const en: Dictionary = {
     openModal: "Expand preview",
     modalTitle: "Project preview",
     iframeTitle: "Interactive project preview",
+    deviceGroup: "Device preview",
+    deviceMobile: "Phone",
+    deviceTablet: "Tablet",
+    deviceDesktop: "Desktop",
   },
 };
 

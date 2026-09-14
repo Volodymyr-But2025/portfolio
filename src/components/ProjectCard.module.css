@@ -65,6 +65,15 @@
   gap: 0.15rem;
 }
 
+.deviceToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.1rem;
+  margin-right: 0.25rem;
+  padding-right: 0.35rem;
+  border-right: 1px solid var(--border);
+}
+
 .iconButton {
   display: inline-flex;
   align-items: center;
@@ -95,11 +104,41 @@
   outline-offset: 2px;
 }
 
+.deviceActive {
+  background: var(--surface);
+  color: var(--accent);
+}
+
 .viewport {
   position: relative;
   aspect-ratio: 16 / 10;
   background: var(--mockup-viewport);
   overflow: hidden;
+}
+
+.deviceStage {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.deviceShell {
+  position: relative;
+  height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.deviceFrame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: top left;
+  overflow: hidden;
+  background: var(--mockup-viewport);
 }
 
 .poster,
@@ -113,8 +152,7 @@
 
 .poster {
   object-fit: cover;
-  filter: blur(2px) brightness(0.85);
-  transform: scale(1.02);
+  object-position: top center;
 }
 
 .posterFallback {
@@ -126,11 +164,11 @@
 .overlay {
   position: absolute;
   inset: 0;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: color-mix(in srgb, var(--overlay) 55%, transparent);
-  backdrop-filter: blur(4px);
+  background: color-mix(in srgb, var(--overlay) 40%, transparent);
 }
 
 .launchButton {
@@ -141,8 +179,11 @@
   background: var(--accent);
   color: #fff;
   font: inherit;
+  font-size: 0.95rem;
   font-weight: 600;
+  line-height: 1.2;
   cursor: pointer;
+  transform: none;
 }
 
 .launchButton:hover {
@@ -283,12 +324,29 @@
   color: #fff;
 }
 
-.modalIframe {
+.modalTitleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
   width: 100%;
-  min-height: min(70vh, 520px);
-  border: 0;
+  padding-right: 0.5rem;
+}
+
+.modalTitleRow .deviceToggle {
+  margin-right: 0;
+  padding-right: 0;
+  border-right: 0;
+}
+
+.modalViewport {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  aspect-ratio: 16 / 10;
   border-radius: 8px;
-  background: #fff;
+  border: 1px solid var(--border);
+  background: var(--mockup-viewport);
 }
 
 @media (max-width: 48em) {
@@ -299,5 +357,6 @@
   .chromeActions {
     grid-column: 1 / -1;
     justify-content: flex-end;
+    flex-wrap: wrap;
   }
 }

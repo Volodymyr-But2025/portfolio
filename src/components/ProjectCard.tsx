@@ -6,7 +6,10 @@ import {
   useId,
   useRef,
   useState,
+  type CSSProperties,
   type KeyboardEvent,
+  type ReactNode,
+  type RefObject,
 } from "react";
 import {
   Badge,
@@ -22,6 +25,11 @@ import {
 } from "lucide-react";
 import type { Project } from "@/data/projects";
 import { useLocale } from "@/components/LocaleProvider";
+import {
+  DEVICE_WIDTHS,
+  DevicePreviewToggle,
+  type PreviewDevice,
+} from "@/components/DevicePreviewToggle";
 import styles from "./ProjectCard.module.css";
 
 function GithubIcon({ size = 16 }: { size?: number }) {
@@ -38,6 +46,87 @@ function GithubIcon({ size = 16 }: { size?: number }) {
   );
 }
 
+function useDeviceScale(
+  stageRef: RefObject<HTMLElement | null>,
+  device: PreviewDevice,
+) {
+  const [scale, setScale] = useState(1);
+  const [stageHeight, setStageHeight] = useState(0);
+  const presetWidth = DEVICE_WIDTHS[device];
+
+  useEffect(() => {
+    const stage = stageRef.current;
+    if (!stage) {
+      return;
+    }
+
+    const update = () => {
+      const width = stage.clientWidth;
+      const height = stage.clientHeight;
+      setStageHeight(height);
+      setScale(Math.min(width / presetWidth, 1));
+    };
+
+    update();
+
+    const observer = new ResizeObserver(update);
+    observer.observe(stage);
+    return () => observer.disconnect();
+  }, [stageRef, presetWidth]);
+
+  return { scale, stageHeight, presetWidth };
+}
+
+type DeviceStageProps = {
+  device: PreviewDevice;
+  children: ReactNode;
+  className?: string;
+  closeBar?: ReactNode;
+};
+
+function DeviceStage({
+  device,
+  children,
+  className,
+  closeBar,
+}: DeviceStageProps) {
+  const stageRef = useRef<HTMLDivElement>(null);
+  const { scale, stageHeight, presetWidth } = useDeviceScale(stageRef, device);
+
+  const frameHeight =
+    scale > 0 && stageHeight > 0 ? stageHeight / scale : undefined;
+  const measured = stageHeight > 0;
+
+  const shellStyle: CSSProperties = measured
+    ? { width: presetWidth * scale }
+    : { width: "100%", maxWidth: presetWidth };
+
+  const frameStyle: CSSProperties = measured
+    ? {
+        width: presetWidth,
+        height: frameHeight,
+        transform: `scale(${scale})`,
+      }
+    : {
+        width: "100%",
+        height: "100%",
+      };
+
+  return (
+    <div
+      ref={stageRef}
+      className={`${styles.deviceStage} ${className ?? ""}`}
+    >
+      <div className={styles.deviceShell} style={shellStyle}>
+        <div className={styles.deviceFrame} style={frameStyle}>
+          {children}
+        </div>
+      </div>
+      {closeBar}
+    </div>
+  );
+}
+
 type ProjectCardProps = {
   project: Project;
 };
@@ -49,6 +138,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   const [isInteractive, setIsInteractive] = useState(false);
   const [refreshKey, setRefreshKey] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
+  const [device, setDevice] = useState<PreviewDevice>("desktop");
 
   const closeInteractive = useCallback(() => {
     setIsInteractive(false);
@@ -93,6 +183,19 @@ export function ProjectCard({ project }: ProjectCardProps) {
   const description = project.description[locale];
   const features = project.features[locale];
 
+  const renderDeviceToggle = () => (
+    <DevicePreviewToggle
+      value={device}
+      onChange={setDevice}
+      groupLabel={labels.deviceGroup}
+      labels={{
+        mobile: labels.deviceMobile,
+        tablet: labels.deviceTablet,
+        desktop: labels.deviceDesktop,
+      }}
+    />
+  );
+
   return (
     <Card
       shadow="sm"
@@ -112,6 +215,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             {project.demoUrl}
           </div>
           <div className={styles.chromeActions}>
+            {renderDeviceToggle()}
             <button
               type="button"
               className={styles.iconButton}
@@ -173,7 +277,21 @@ export function ProjectCard({ project }: ProjectCardProps) {
               </div>
             </>
           ) : (
-            <>
+            <DeviceStage
+              device={device}
+              closeBar={
+                <div className={styles.closeBar}>
+                  <button
+                    type="button"
+                    className={styles.closeButton}
+                    onClick={closeInteractive}
+                  >
+                    <X size={14} aria-hidden />
+                    {labels.closeInteractive}
+                  </button>
+                </div>
+              }
+            >
               <iframe
                 id={iframeId}
                 key={refreshKey}
@@ -183,17 +301,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 sandbox="allow-scripts allow-same-origin allow-forms"
                 className={styles.iframe}
               />
-              <div className={styles.closeBar}>
-                <button
-                  type="button"
-                  className={styles.closeButton}
-                  onClick={closeInteractive}
-                >
-                  <X size={14} aria-hidden />
-                  {labels.closeInteractive}
-                </button>
-              </div>
-            </>
+            </DeviceStage>
           )}
         </div>
       </div>
@@ -253,19 +361,26 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <Modal
           opened={modalOpen}
           onClose={() => setModalOpen(false)}
-          title={labels.modalTitle}
+          title={
+            <div className={styles.modalTitleRow}>
+              <span>{labels.modalTitle}</span>
+              {renderDeviceToggle()}
+            </div>
+          }
           size="xl"
           centered
         >
           {isInteractive ? (
-            <iframe
-              key={`modal-${refreshKey}`}
-              src={project.demoUrl}
-              title={`${labels.iframeTitle}: ${title}`}
-              loading="lazy"
-              sandbox="allow-scripts allow-same-origin allow-forms"
-              className={styles.modalIframe}
-            />
+            <DeviceStage device={device} className={styles.modalViewport}>
+              <iframe
+                key={`modal-${refreshKey}`}
+                src={project.demoUrl}
+                title={`${labels.iframeTitle}: ${title}`}
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin allow-forms"
+                className={styles.iframe}
+              />
+            </DeviceStage>
           ) : null}
         </Modal>
       ) : null}

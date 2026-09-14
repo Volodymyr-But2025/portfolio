@@ -7,24 +7,12 @@ import styles from "./ThemeToggle.module.css";
 
 export function ThemeToggle() {
   const { dictionary } = useLocale();
-  const { colorScheme, setColorScheme } = useMantineColorScheme();
-
-  const cycleScheme = () => {
-    if (colorScheme === "light") {
-      setColorScheme("dark");
-      return;
-    }
-    if (colorScheme === "dark") {
-      setColorScheme("auto");
-      return;
-    }
-    setColorScheme("light");
-  };
+  const { toggleColorScheme } = useMantineColorScheme();
 
   return (
     <button
       type="button"
-      onClick={cycleScheme}
+      onClick={toggleColorScheme}
       aria-label={dictionary.themeToggle.label}
       className={styles.toggle}
     >

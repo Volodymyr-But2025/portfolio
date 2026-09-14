@@ -44,7 +44,7 @@ export const projects: Project[] = [
       ],
     },
     category: "frontend",
-    fallbackImage: "/projects/mebleriya.svg",
+    fallbackImage: "/projects/mebleriya.png",
   },
   {
     id: "ecotote",
@@ -72,6 +72,6 @@ export const projects: Project[] = [
       ],
     },
     category: "frontend",
-    fallbackImage: "/projects/ecotote.svg",
+    fallbackImage: "/projects/ecotote.png",
   },
 ];
