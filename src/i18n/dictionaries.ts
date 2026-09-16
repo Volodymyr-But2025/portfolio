@@ -8,14 +8,12 @@ export type Dictionary = {
   hero: {
     name: string;
     role: string;
+    stack: string;
     subtitle: string;
     cta: string;
   };
   themeToggle: {
     label: string;
-    tooltipLight: string;
-    tooltipDark: string;
-    tooltipAuto: string;
   };
   localeToggle: {
     label: string;
@@ -54,16 +52,14 @@ const uk: Dictionary = {
   },
   hero: {
     name: "Volodymyr",
-    role: "Full Stack Developer (React, Next.js, Node.js)",
+    role: "Full Stack Developer",
+    stack: "React · Next.js · Node.js",
     subtitle:
       "Будую сучасні веб-застосунки з чистим TypeScript, доступним UI та продуманим бекендом.",
     cta: "До проєктів",
   },
   themeToggle: {
     label: "Перемкнути тему",
-    tooltipLight: "Світла тема",
-    tooltipDark: "Темна тема",
-    tooltipAuto: "Системна тема",
   },
   localeToggle: {
     label: "Перемкнути мову",
@@ -103,16 +99,14 @@ const en: Dictionary = {
   },
   hero: {
     name: "Volodymyr",
-    role: "Full Stack Developer (React, Next.js, Node.js)",
+    role: "Full Stack Developer",
+    stack: "React · Next.js · Node.js",
     subtitle:
       "I build modern web apps with clean TypeScript, accessible UI, and a thoughtful backend.",
     cta: "View projects",
   },
   themeToggle: {
     label: "Toggle color scheme",
-    tooltipLight: "Light theme",
-    tooltipDark: "Dark theme",
-    tooltipAuto: "System theme",
   },
   localeToggle: {
     label: "Toggle language",

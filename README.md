@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Volodymyr — Full Stack Developer
 
-## Getting Started
+Особисте портфоліо на **Next.js 16**: коротко про мене, стек і навчальні проєкти з інтерактивним прев’ю в iframe.
 
-First, run the development server:
+<p align="center">
+  <img src="public/og.png" alt="Volodymyr — Full Stack Developer" width="720">
+</p>
+
+## Скріншоти
+
+<table>
+  <tr>
+    <td align="center">
+      <strong>Світла тема</strong><br>
+      <img src="docs/screenshots/hero-light.png" alt="Hero і технології у світлій темі">
+    </td>
+    <td align="center">
+      <strong>Темна тема</strong><br>
+      <img src="docs/screenshots/hero-dark.png" alt="Hero і технології у темній темі">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>Картки проєктів</strong><br>
+      <img src="docs/screenshots/projects-light.png" alt="Інтерактивне прев’ю проєкту Меблерія">
+    </td>
+    <td align="center">
+      <strong>Мобільна версія</strong><br>
+      <img src="docs/screenshots/mobile-light.png" alt="Портфоліо на вузькому екрані з перемикачами мови та теми">
+    </td>
+  </tr>
+</table>
+
+## Що вміє сайт
+
+- **UA / EN** — мова з cookie і заголовка `Accept-Language` (без окремого URL для кожної локалі).
+- **Світла / темна тема** — через Mantine `ColorSchemeScript`, з урахуванням системної схеми.
+- **Інтерактивні прев’ю** — постер проєкту, запуск iframe за кліком, оновлення, модалка, пресети телефон / планшет / ПК.
+- **Контакти** — Telegram, GitHub, LinkedIn.
+- **Доступність** — підписи кнопок, `focus-visible`, `rel="noopener noreferrer"` на зовнішніх лінках.
+
+Якщо сайт блокує вбудовування (`X-Frame-Options` / CSP), прев’ю може бути порожнім — тоді відкривається Live Demo в новій вкладці.
+
+## Стек
+
+| Шар | Технології |
+| --- | --- |
+| UI | React 19, Next.js 16 (App Router), TypeScript, CSS Modules, Mantine |
+| i18n | власні словники `uk` / `en`, cookie `portfolio-locale`, middleware |
+| Тести | Vitest, Testing Library, jsdom |
+| Якість | ESLint (`eslint-config-next`) |
+
+Проєкти в каталозі зараз: **Меблерія** (Team Lead / Front-End) і **EcoTote** (секція Support). Дані лежать у `src/data/`.
+
+## Запуск
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Відкрий [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run lint      # ESLint
+npm run test:run  # Vitest один раз
+npm run build     # production-збірка
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Структура
 
-## Learn More
+```
+src/app/           # layout, головна сторінка, глобальні стилі
+src/components/    # hero, tech stack, картки проєктів, тогли
+src/data/          # контакти, стек, проєкти
+src/i18n/          # локалі, словники, Accept-Language
+middleware.ts      # виставляє cookie мови
+public/            # og.png і постери проєктів
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Контакти
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Telegram: [t.me/Volodymyr_Butenko_Y](https://t.me/Volodymyr_Butenko_Y)
+- GitHub: [Volodymyr-But2025](https://github.com/Volodymyr-But2025)
+- LinkedIn: [volodymyr-butenko-y](https://www.linkedin.com/in/volodymyr-butenko-y)

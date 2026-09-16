@@ -10,68 +10,96 @@ export type Project = {
   githubUrl: string;
   tags: string[];
   features: Record<Locale, string[]>;
-  category: "fullstack" | "frontend" | "backend";
   /** Poster under the overlay before interactive launch — not an X-Frame fallback. */
   fallbackImage?: string;
 };
 
 export const projects: Project[] = [
   {
-    id: "mebleriya",
+    id: "harmoniq",
     title: {
-      uk: "Меблерія — командний e-commerce",
-      en: "Mebleriya — team e-commerce",
+      uk: "Командний проєкт: Harmoniq — платформа статей",
+      en: "Team project: Harmoniq — article platform",
     },
     description: {
-      uk: "Team Lead і Front-End Developer у команді з 10 осіб: адаптивний інтернет-магазин меблів, GitHub Flow і деплой.",
-      en: "Team Lead & Front-End Developer in a 10-member team: responsive furniture e-commerce, GitHub Flow, and deployment.",
+      uk: "Full-Stack Developer у команді з 12 осіб: спільнота статей на Next.js і Express REST API, сесії на cookies, закладки, профіль і адаптив. Свій live на Vercel і Render.",
+      en: "Full-Stack Developer in a 12-member team: Next.js article community with an Express REST API, cookie sessions, bookmarks, profile, and responsive UI. Own live on Vercel and Render.",
+    },
+    demoUrl: "https://harmoniq-azure.vercel.app",
+    githubUrl: "https://github.com/Volodymyr-But2025/harmoniq",
+    tags: ["Next.js", "TypeScript", "React", "Express", "MongoDB", "TanStack Query"],
+    features: {
+      uk: [
+        "Full-Stack Developer у команді з 12 людей",
+        "Статті, автори, профіль і закладки (React Query)",
+        "REST API: Express, MongoDB, httpOnly cookies, Cloudinary",
+        "Мобільний UI, власний live на Vercel і Render",
+      ],
+      en: [
+        "Full-Stack Developer in a 12-person team",
+        "Articles, authors, profile, and bookmarks (React Query)",
+        "REST API: Express, MongoDB, httpOnly cookies, Cloudinary",
+        "Mobile-first UI, own live on Vercel and Render",
+      ],
+    },
+    fallbackImage: "/projects/harmoniq.png",
+  },
+  {
+    id: "mebleriya",
+    title: {
+      uk: "Командний проєкт: Меблерія — каталог меблів",
+      en: "Team project: Mebleriya — furniture catalog",
+    },
+    description: {
+      uk: "Team Lead і Front-End Developer у команді з 10 осіб: каталог меблів на Vite з REST API, модалками товару й замовлення, адаптив і GitHub Pages.",
+      en: "Team Lead & Front-End Developer in a 10-member team: Vite furniture catalog with a REST API, product/order modals, responsive layout, and GitHub Pages.",
     },
     demoUrl: "https://volodymyr-but2025.github.io/Progect_team-PlusUltra/",
     githubUrl: "https://github.com/Volodymyr-But2025/Progect_team-PlusUltra",
-    tags: ["HTML5", "CSS3", "BEM", "JavaScript", "Vite", "Git"],
+    tags: ["HTML5", "CSS3", "JavaScript", "Vite", "Axios", "Git"],
     features: {
       uk: [
-        "Лідерство команди з 10 людей",
-        "Reusable UI-компоненти (JS, Vite)",
-        "Адаптивний дизайн на всіх пристроях",
-        "Code quality, merge conflicts і деплой",
+        "Team Lead команди з 10 людей",
+        "Каталог з REST API (Axios) і пагінацією",
+        "Модалки товару та замовлення",
+        "Адаптивний UI і деплой на GitHub Pages",
       ],
       en: [
-        "Led a team of 10 members",
-        "Reusable UI components (JS, Vite)",
-        "Adaptive design across all devices",
-        "Code quality, merge conflicts, and deployment",
+        "Team Lead of a 10-person team",
+        "Catalog via REST API (Axios) with pagination",
+        "Product and order modals",
+        "Responsive UI and GitHub Pages deploy",
       ],
     },
-    category: "frontend",
     fallbackImage: "/projects/mebleriya.png",
   },
   {
     id: "ecotote",
     title: {
-      uk: "EcoTote — командний лендінг",
-      en: "EcoTote — team landing",
+      uk: "Командний проєкт: EcoTote — лендінг",
+      en: "Team project: EcoTote — landing",
     },
     description: {
-      uk: "Front-End Developer (секція Support): адаптивні блоки, модальні вікна та анімації в командному проєкті на Vite.",
-      en: "Front-End Developer (Support section): responsive blocks, modals, and animations in a collaborative Vite project.",
+      uk: "Front-End Developer (секція Support): адаптивна форма зворотного зв’язку, валідація полів і ретина-зображення в командному лендінгу на Vite.",
+      en: "Front-End Developer (Support section): responsive contact form, field validation, and retina images in a collaborative Vite landing.",
     },
     demoUrl: "https://volodymyr-but2025.github.io/Team_junior/",
     githubUrl: "https://github.com/Volodymyr-But2025/Team_junior",
     tags: ["HTML5", "CSS3", "Vite", "Git"],
     features: {
       uk: [
-        "Адаптивні секції (mobile / tablet / desktop)",
-        "Модальні вікна та плавні анімації",
-        "Спільна робота за GitHub Flow",
+        "Front-End Developer у командному лендінгу",
+        "Адаптивна форма Support (mobile / tablet / desktop)",
+        "Валідація полів і ретина-зображення",
+        "Командна робота через pull requests",
       ],
       en: [
-        "Responsive sections (mobile / tablet / desktop)",
-        "Modal windows and smooth UI animations",
-        "Collaboration with GitHub Flow",
+        "Front-End Developer on a team landing",
+        "Responsive Support form (mobile / tablet / desktop)",
+        "Field validation and retina images",
+        "Collaboration via pull requests",
       ],
     },
-    category: "frontend",
     fallbackImage: "/projects/ecotote.png",
   },
 ];
