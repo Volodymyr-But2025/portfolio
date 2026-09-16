@@ -17,11 +17,24 @@ const inter = Inter({
   subsets: ["latin", "cyrillic"],
 });
 
+function getSiteUrl(): string {
+  if (process.env.NEXT_PUBLIC_SITE_URL) {
+    return process.env.NEXT_PUBLIC_SITE_URL;
+  }
+
+  const vercelHost =
+    process.env.VERCEL_PROJECT_PRODUCTION_URL ?? process.env.VERCEL_URL;
+  if (vercelHost) {
+    return `https://${vercelHost}`;
+  }
+
+  return "http://localhost:3000";
+}
+
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const dictionary = getDictionary(locale);
-  const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  const siteUrl = getSiteUrl();
 
   return {
     metadataBase: new URL(siteUrl),

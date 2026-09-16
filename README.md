@@ -2,6 +2,8 @@
 
 Особисте портфоліо на **Next.js 16**: коротко про мене, стек і навчальні проєкти з інтерактивним прев’ю в iframe.
 
+Live: [https://portfolio-ve1w.vercel.app](https://portfolio-ve1w.vercel.app/)
+
 <p align="center">
   <img src="public/og.png" alt="Volodymyr — Full Stack Developer" width="720">
 </p>
@@ -50,7 +52,7 @@
 | Тести | Vitest, Testing Library, jsdom |
 | Якість | ESLint (`eslint-config-next`) |
 
-Проєкти в каталозі зараз: **Меблерія** (Team Lead / Front-End) і **EcoTote** (секція Support). Дані лежать у `src/data/`.
+Проєкти в каталозі зараз: **Harmoniq** (Full-Stack), **Меблерія** (Team Lead / Front-End) і **EcoTote** (секція Support). Дані лежать у `src/data/`.
 
 ## Запуск
 
