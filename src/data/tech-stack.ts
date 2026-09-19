@@ -14,11 +14,18 @@ export const techStack: TechGroup[] = [
       en: "Frontend",
     },
     items: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "TypeScript",
       "React",
       "Next.js",
-      "TypeScript",
+      "Vite",
       "CSS Modules",
       "Mantine",
+      "TanStack Query",
+      "Axios",
+      "Zustand",
     ],
   },
   {
@@ -27,7 +34,7 @@ export const techStack: TechGroup[] = [
       uk: "Backend",
       en: "Backend",
     },
-    items: ["Node.js", "NestJS", "Express", "PostgreSQL", "Prisma"],
+    items: ["Node.js", "Express", "MongoDB"],
   },
   {
     id: "tools",
@@ -35,6 +42,6 @@ export const techStack: TechGroup[] = [
       uk: "Tools & DevOps",
       en: "Tools & DevOps",
     },
-    items: ["Git", "Docker", "Vercel", "ESLint", "GitHub Actions"],
+    items: ["Git", "ESLint", "Vitest", "Vercel", "Render", "GitHub Pages"],
   },
 ];

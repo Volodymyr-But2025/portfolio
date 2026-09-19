@@ -11,7 +11,7 @@ function LocaleProbe() {
   return (
     <div>
       <span data-testid="locale">{locale}</span>
-      <span data-testid="cta">{dictionary.hero.cta}</span>
+      <span data-testid="tech-title">{dictionary.tech.title}</span>
     </div>
   );
 }
@@ -39,8 +39,8 @@ describe("LocaleToggle", () => {
     );
 
     expect(screen.getByTestId("locale")).toHaveTextContent("uk");
-    expect(screen.getByTestId("cta")).toHaveTextContent(
-      dictionaries.uk.hero.cta,
+    expect(screen.getByTestId("tech-title")).toHaveTextContent(
+      dictionaries.uk.tech.title,
     );
 
     await user.click(
@@ -50,8 +50,8 @@ describe("LocaleToggle", () => {
     );
 
     expect(screen.getByTestId("locale")).toHaveTextContent("en");
-    expect(screen.getByTestId("cta")).toHaveTextContent(
-      dictionaries.en.hero.cta,
+    expect(screen.getByTestId("tech-title")).toHaveTextContent(
+      dictionaries.en.tech.title,
     );
     expect(document.documentElement.lang).toBe("en");
     expect(document.cookie).toContain(`${LOCALE_COOKIE}=en`);

@@ -51,8 +51,8 @@
 | Проєкт | Роль | Live | Код |
 | --- | --- | --- | --- |
 | [Harmoniq](https://harmoniq-azure.vercel.app) — платформа статей | Full-Stack Developer, команда з 12 осіб (Next.js, Express, MongoDB) | [Vercel](https://harmoniq-azure.vercel.app) | [монорепо](https://github.com/Volodymyr-But2025/harmoniq) |
-| [Меблерія](https://volodymyr-but2025.github.io/Progect_team-PlusUltra/) — каталог меблів | Team Lead і Front-End Developer, команда з 10 осіб (Vite, REST API) | [GitHub Pages](https://volodymyr-but2025.github.io/Progect_team-PlusUltra/) | [репозиторій](https://github.com/Volodymyr-But2025/Progect_team-PlusUltra) |
-| [EcoTote](https://volodymyr-but2025.github.io/Team_junior/) — лендінг | Front-End Developer, секція Support (форма, валідація, ретина) | [GitHub Pages](https://volodymyr-but2025.github.io/Team_junior/) | [репозиторій](https://github.com/Volodymyr-But2025/Team_junior) |
+| [Меблерія](https://volodymyr-but2025.github.io/Progect_team-PlusUltra/) — каталог меблів | Team Lead і Front-End Developer, команда з 10 осіб (Vite, Axios, REST API) | [GitHub Pages](https://volodymyr-but2025.github.io/Progect_team-PlusUltra/) | [репозиторій](https://github.com/Volodymyr-But2025/Progect_team-PlusUltra) |
+| [EcoTote](https://volodymyr-but2025.github.io/Team_junior/) — лендінг | Front-End Developer, секція Support (Vite: форма, валідація, ретина) | [GitHub Pages](https://volodymyr-but2025.github.io/Team_junior/) | [репозиторій](https://github.com/Volodymyr-But2025/Team_junior) |
 
 ## Стек
 

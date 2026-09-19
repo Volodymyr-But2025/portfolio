@@ -5,13 +5,6 @@ export type Dictionary = {
     title: string;
     description: string;
   };
-  hero: {
-    name: string;
-    role: string;
-    stack: string;
-    subtitle: string;
-    cta: string;
-  };
   themeToggle: {
     label: string;
   };
@@ -49,14 +42,6 @@ const uk: Dictionary = {
     title: "Volodymyr — Full Stack Developer",
     description:
       "Портфоліо Full Stack Developer: React, Next.js, Node.js. Інтерактивні прев’ю навчальних проєктів.",
-  },
-  hero: {
-    name: "Volodymyr",
-    role: "Full Stack Developer",
-    stack: "React · Next.js · Node.js",
-    subtitle:
-      "Будую сучасні веб-застосунки з чистим TypeScript, доступним UI та продуманим бекендом.",
-    cta: "До проєктів",
   },
   themeToggle: {
     label: "Перемкнути тему",
@@ -96,14 +81,6 @@ const en: Dictionary = {
     title: "Volodymyr — Full Stack Developer",
     description:
       "Full Stack Developer portfolio: React, Next.js, Node.js. Interactive previews of learning projects.",
-  },
-  hero: {
-    name: "Volodymyr",
-    role: "Full Stack Developer",
-    stack: "React · Next.js · Node.js",
-    subtitle:
-      "I build modern web apps with clean TypeScript, accessible UI, and a thoughtful backend.",
-    cta: "View projects",
   },
   themeToggle: {
     label: "Toggle color scheme",

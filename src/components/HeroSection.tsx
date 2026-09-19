@@ -1,13 +1,13 @@
 "use client";
 
-import { contacts } from "@/data/contacts";
+import { hero } from "@/data/hero";
 import { useLocale } from "@/components/LocaleProvider";
 import { LocaleToggle } from "@/components/LocaleToggle";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import styles from "./HeroSection.module.css";
 
 export function HeroSection() {
-  const { dictionary } = useLocale();
+  const { locale } = useLocale();
 
   const scrollToProjects = () => {
     document
@@ -25,19 +25,19 @@ export function HeroSection() {
 
         <div className={styles.card}>
           <h1 id="hero-title" className={styles.title}>
-            {dictionary.hero.name}
+            {hero.name}
           </h1>
-          <p className={styles.role}>{dictionary.hero.role}</p>
-          <p className={styles.stack}>{dictionary.hero.stack}</p>
+          <p className={styles.role}>{hero.role}</p>
+          <p className={styles.stack}>{hero.stack.join(" · ")}</p>
           <div className={styles.flag} aria-hidden>
             <span className={styles.flagBlue} />
             <span className={styles.flagYellow} />
           </div>
 
-          <p className={styles.subtitle}>{dictionary.hero.subtitle}</p>
+          <p className={styles.subtitle}>{hero.subtitle[locale]}</p>
 
           <ul className={styles.contacts}>
-            {contacts.map((contact) => (
+            {hero.contacts.map((contact) => (
               <li key={contact.id}>
                 <a
                   href={contact.url}
@@ -56,7 +56,7 @@ export function HeroSection() {
             onClick={scrollToProjects}
             className={styles.cta}
           >
-            {dictionary.hero.cta}
+            {hero.cta[locale]}
           </button>
         </div>
       </div>
