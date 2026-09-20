@@ -63,7 +63,7 @@ export const projects: Project[] = [
       en: "Team Lead & Front-End Developer in a 10-member team: Vite furniture catalog with a REST API, product/order modals, responsive layout, and GitHub Pages.",
     },
     demoUrl: "https://volodymyr-but2025.github.io/Progect_team-PlusUltra/",
-    githubUrl: "https://github.com/Volodymyr-But2025/Progect_team-PlusUltra",
+    githubUrl: "https://github.com/Volodymyr-But2025/Mebleriya",
     tags: ["HTML5", "CSS3", "JavaScript", "Vite", "Axios", "Git"],
     features: {
       uk: [
