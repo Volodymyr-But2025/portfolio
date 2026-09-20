@@ -54,7 +54,7 @@ Data lives in `src/data/projects.ts`.
 | Project | Role | Live | Code |
 | --- | --- | --- | --- |
 | [Harmoniq](https://harmoniq-azure.vercel.app) — article platform | Full-Stack Developer, team of 12 (Next.js, Express, MongoDB) | [Vercel](https://harmoniq-azure.vercel.app) | [monorepo](https://github.com/Volodymyr-But2025/harmoniq) |
-| [Mebleriya](https://volodymyr-but2025.github.io/Progect_team-PlusUltra/) — furniture catalog | Team Lead & Front-End Developer, team of 10 (Vite, Axios, REST API) | [GitHub Pages](https://volodymyr-but2025.github.io/Progect_team-PlusUltra/) | [repository](https://github.com/Volodymyr-But2025/Mebleriya) |
+| [Mebleriya](https://volodymyr-but2025.github.io/Mebleriya/) — furniture catalog | Team Lead & Front-End Developer, team of 10 (Vite, Axios, REST API) | [GitHub Pages](https://volodymyr-but2025.github.io/Mebleriya/) | [repository](https://github.com/Volodymyr-But2025/Mebleriya) |
 | [Tattoo Calculator](https://tattoo-calculator-ashen.vercel.app/) — tattoo price estimator | Front-End Developer, personal PWA (React, Vite, Tailwind) | [Vercel](https://tattoo-calculator-ashen.vercel.app/) | [repository](https://github.com/Volodymyr-But2025/TattooCalculator) |
 | [EcoTote](https://volodymyr-but2025.github.io/Team_junior/) — landing | Front-End Developer, Support section (Vite: form, validation, retina) | [GitHub Pages](https://volodymyr-but2025.github.io/Team_junior/) | [repository](https://github.com/Volodymyr-But2025/Team_junior) |
 
