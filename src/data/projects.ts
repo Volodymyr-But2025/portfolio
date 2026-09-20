@@ -82,6 +82,35 @@ export const projects: Project[] = [
     fallbackImage: "/projects/mebleriya.png",
   },
   {
+    id: "tattoo-calculator",
+    title: {
+      uk: "Особистий проєкт: Tattoo Calculator — калькулятор ціни тату",
+      en: "Personal project: Tattoo Calculator — tattoo price estimator",
+    },
+    description: {
+      uk: "Front-End Developer: PWA для майстра на React і Vite. Розрахунок за розміром, стилем, кольором і зоною; ставка в localStorage; копіювання комерційної пропозиції клієнту. Live на Vercel.",
+      en: "Front-End Developer: React + Vite PWA for tattoo artists. Quote by size, style, color, and placement; hourly rate in localStorage; copy-to-clipboard client quote. Live on Vercel.",
+    },
+    demoUrl: "https://tattoo-calculator-ashen.vercel.app/",
+    githubUrl: "https://github.com/Volodymyr-But2025/TattooCalculator",
+    tags: ["React", "Vite", "Tailwind CSS", "PWA", "JavaScript"],
+    features: {
+      uk: [
+        "Особистий продукт: калькулятор ціни для тату-майстра",
+        "Формула: площа × стиль × колір × зона + ставка й розхідники",
+        "PWA (vite-plugin-pwa) і збереження рейту в localStorage",
+        "Копіювання розрахунку клієнту; live на Vercel",
+      ],
+      en: [
+        "Personal product: price calculator for tattoo artists",
+        "Formula: area × style × color × placement + rate & materials",
+        "PWA (vite-plugin-pwa) with hourly rate saved in localStorage",
+        "Copy client quote to clipboard; live on Vercel",
+      ],
+    },
+    fallbackImage: "/projects/tattoocalculator.png",
+  },
+  {
     id: "ecotote",
     title: {
       uk: "Командний проєкт: EcoTote — лендінг",
